@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BỐN MÙA</title>
+<style>
+  :root {
+    --xanh: #0033CC;
+    --do: #D40000;
+    --vang-nhat: #FFFDE7;
+    --hong-phan: #FFD9E6;
+    --vien-xam: #9E9E9E;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #e8a9bf #fdf6ec;
+  }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #fdf6ec; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f0a8c0, #e8b06a);
+    border-radius: 6px;
+    border: 2px solid #fdf6ec;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #e88bab, #dd9a4b); }
+
+  ::selection { background: var(--hong-phan); color: var(--do); }
+
+  body {
+    min-height: 100svh;
+    display: grid;
+    padding: 56px 16px;
+    background: linear-gradient(160deg, #fdf6ec 0%, #f7efe2 55%, #f2e9db 100%);
+    font-family: 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+    overflow-x: hidden;
+  }
+
+  .sky {
+    position: fixed;
+    inset: -12%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 62% 52% at 50% 46%, rgba(255, 253, 231, .7), transparent 72%),
+      radial-gradient(circle at 10% 14%, rgba(255, 183, 213, .55), transparent 42%),
+      radial-gradient(circle at 90% 10%, rgba(255, 214, 110, .5), transparent 42%),
+      radial-gradient(circle at 88% 90%, rgba(255, 158, 110, .45), transparent 44%),
+      radial-gradient(circle at 8% 92%, rgba(158, 205, 255, .5), transparent 44%),
+      radial-gradient(ellipse at center, transparent 58%, rgba(96, 62, 24, .1) 100%);
+    animation: hueDrift 52s ease-in-out infinite alternate;
+  }
+  @keyframes hueDrift {
+    from { filter: hue-rotate(-13deg); }
+    to   { filter: hue-rotate(13deg); }
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: .045;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  .ambient {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .p {
+    position: absolute;
+    top: -6vh;
+    left: var(--x);
+    width: var(--s);
+    height: var(--s);
+    opacity: 0;
+    animation: drift var(--t) linear var(--delay) infinite;
+    will-change: transform;
+  }
+  .petal {
+    height: calc(var(--s) * .72);
+    background: linear-gradient(135deg, #ffc7dd, #ff9ec4);
+    border-radius: 75% 25% 65% 35% / 65% 35% 65% 35%;
+    box-shadow: 0 0 6px rgba(255, 158, 196, .35);
+  }
+  .leaf {
+    height: calc(var(--s) * .8);
+    background: linear-gradient(135deg, #ffcf7d, #f08a3c);
+    border-radius: 4% 70% 4% 70%;
+    box-shadow: 0 0 6px rgba(240, 138, 60, .3);
+  }
+  .snow {
