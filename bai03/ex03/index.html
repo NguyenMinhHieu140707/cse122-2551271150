@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Giới thiệu Vịnh Hạ Long – Kỳ quan thiên nhiên thế giới: gần 2.000 hòn đảo đá vôi trên mặt nước xanh ngọc, Di sản thiên nhiên thế giới được UNESCO công nhận.">
+  <title>Vịnh Hạ Long – Kỳ quan thiên nhiên thế giới</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bien-dam: #0b3d5c;
+      --bien-vua: #0a5c8a;
+      --bien-nhat: #7ec8e3;
+      --chu: #2c4356;
+      --vien: #d9e9f2;
+    }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--bien-dam) rgba(255, 255, 255, .22);
+    }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: rgba(255, 255, 255, .22); }
+    ::-webkit-scrollbar-thumb {
+      background: var(--bien-dam);
+      border-radius: 8px;
+      border: 2px solid rgba(255, 255, 255, .35);
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--bien-vua); }
+
+    ::selection { background: var(--bien-vua); color: #fff; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #7ec8e3 0%, #0a5c8a 100%);
+      background-attachment: fixed;
+      font-family: 'Be Vietnam Pro', 'Segoe UI', Tahoma, Arial, sans-serif;
+      color: var(--chu);
+      padding: 52px 18px 72px;
+    }
+
+    .bai-viet {
+      position: relative;
+      overflow: hidden;
+      max-width: 880px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: clamp(26px, 5vw, 56px);
+      box-shadow: 0 24px 60px rgba(4, 32, 51, .38);
+      animation: hien-len .7s ease-out both;
+    }
+    .bai-viet::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--bien-nhat), var(--bien-vua) 55%, var(--bien-dam));
+    }
+
+    @keyframes hien-len {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .nhan-de {
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--bien-vua);
+      margin-bottom: 14px;
+    }
+
+    .tieu-de {
+      text-align: center;
+      color: #0b3d5c;
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-weight: 800;
+      font-size: clamp(1.9rem, 4.5vw, 2.75rem);
+      line-height: 1.18;
+    }
+    .tieu-de .phu-de {
+      display: block;
+      font-size: .52em;
+      font-weight: 700;
+      margin-top: 8px;
+      letter-spacing: .01em;
+    }
+
+    .song-bien {
+      display: block;
+      margin: 18px auto 0;
+    }
+
+    .sapo {
+      background: #0b3d5c;
+      color: #ffffff;
+      font-style: italic;
+      border-radius: 6px;
+      padding: 18px 24px;
+      margin: 28px 0 30px;
+      font-size: 1.04rem;
+      line-height: 1.75;
+      box-shadow: inset 0 0 0 1px rgba(126, 200, 227, .28);
+    }
+
+    .noi-dung::after { content: ""; display: block; clear: both; }
+
+    .anh-vinh {
+      float: right;
+      width: min(46%, 340px);
+      margin: 6px 0 14px 28px;
+    }
+    .anh-vinh::after { content: ""; display: block; clear: both; }
+    .anh-vinh img {
+      float: right;
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 4px solid #fff;
+      outline: 1px solid var(--vien);
+      box-shadow: 0 12px 28px rgba(11, 61, 92, .3);
+    }
+    .anh-vinh figcaption {
+      margin-top: 9px;
+      font-size: .8rem;
+      font-style: italic;
+      line-height: 1.5;
+      text-align: center;
+      color: #5b7186;
+    }
+
+    .than-bai {
+      text-align: justify;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 1.15em;
+    }
+    .than-bai::first-letter {
+      float: left;
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0b3d5c;
+      line-height: .82;
+      padding: .06em .12em 0 0;
+    }
+
+    .thong-tin {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 28px;
+      border-top: 1px solid var(--vien);
+      margin-top: 30px;
+      padding-top: 20px;
+    }
+    .thong-tin span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--bien-vua);
+    }
+    .thong-tin svg { flex: none; }
+
+    @media (max-width: 640px) {
+      body { padding: 26px 12px 48px; }
+      .anh-vinh {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px;
+      }
+      .sapo { padding: 16px 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bai-viet { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="bai-viet">
+    <header>
+      <p class="nhan-de">Tỉnh Quảng Ninh · Việt Nam</p>
+      <h1 class="tieu-de">Vịnh Hạ Long <span class="phu-de">– Kỳ quan thiên nhiên thế giới</span></h1>
+      <svg class="song-bien" viewBox="0 0 140 20" width="140" height="20" aria-hidden="true">
+        <path d="M2 10 Q10 3 18 10 T34 10 T50 10 T66 10 T82 10 T98 10 T114 10 T130 10" fill="none" stroke="#7ec8e3" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M10 15 Q18 8 26 15 T42 15 T58 15 T74 15 T90 15 T106 15 T122 15 T138 15" fill="none" stroke="#0a5c8a" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+      </svg>
+    </header>
+
+    <p class="sapo">Vịnh Hạ Long thuộc tỉnh Quảng Ninh, nổi tiếng với gần 2.000 hòn đảo đá vôi lớn nhỏ, được UNESCO công nhận là Di sản thiên nhiên thế giới.</p>
+
+    <div class="noi-dung">
+      <figure class="anh-vinh">
+        <img src="vinh-ha-long.jpg" alt="Du thuyền truyền thống giữa những đảo đá vôi trên mặt nước xanh ngọc của Vịnh Hạ Long">
+        <figcaption>Đảo đá vôi và du thuyền trên mặt nước xanh ngọc Hạ Long.</figcaption>
+      </figure>
+
+      <p class="than-bai">Vịnh trải rộng trên vùng biển Đông Bắc, nơi những đảo đá muôn hình dáng nổi trên mặt nước xanh ngọc. Du khách có thể ngủ đêm trên du thuyền, chèo kayak xuyên hang, ngắm bình minh từ đảo Titop hay khám phá hang Sửng Sốt huyền ảo.</p>
+
+      <p class="than-bai">Hải sản Hạ Long phong phú, con người thân thiện, cảnh sắc bốn mùa đều đẹp – đây là điểm đến không thể bỏ lỡ của du khách trong và ngoài nước.</p>
+    </div>
+
+    <footer class="thong-tin">
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9.2 13.4 7.5 21l4.5-2.5L16.5 21l-1.7-7.6"/></svg>
+        UNESCO công nhận: 1994 &amp; 2000
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16l4.5-7 3 4.2L14 8l7 8"/><path d="M2 20c2 0 2-1.4 4-1.4s2 1.4 4 1.4 2-1.4 4-1.4 2 1.4 4 1.4 2-1.4 4-1.4"/></svg>
+        Gần 2.000 hòn đảo đá vôi
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        Vùng biển Đông Bắc, Quảng Ninh
+      </span>
+    </footer>
+  </article>
+</body>
+</html>
